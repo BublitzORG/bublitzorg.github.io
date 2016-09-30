@@ -1,0 +1,16 @@
+locale: de_DE
+exclude:
+  - .asset-cache
+  - bower*
+  - Gemfile*
+  - vendor
+assets:
+  compress:
+    css: true
+    js: true
+  digest: true
+  sources:
+    - bower_components
+    - _assets/less
+    - _assets/images
+    - _assets/js

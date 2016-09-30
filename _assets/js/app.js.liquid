@@ -1,0 +1,29 @@
+//= require jquery/dist/jquery.js
+//= require bootstrap/dist/js/bootstrap.js
+//= require jquery/dist/jquery.js
+//= require mediaelement/build/mediaelement-and-player.js
+
+var player = new MediaElementPlayer('#audio-player', {
+	setDimensions: false,
+  plugins: ['flash', 'silverlight'],
+  flashName: '{% asset_path mediaelement/build/flashmediaelement.swf %}',
+	silverlightName: '{% asset_path mediaelement/build/silverlightmediaelement.xap %}',
+  features: ['playpause'],
+  success: function(mediaElement, domObject) {
+    function autoPlay() {
+      player.play();
+    }
+    $(window).one('click', autoPlay);
+    mediaElement.addEventListener('playing', function() {
+        $(window).off('click', autoPlay);
+    }, false);
+    if (mediaElement.pluginType == 'flash') {
+      mediaElement.addEventListener('canplay', function() {
+        mediaElement.play();
+      }, false);
+    }
+  },
+  error: function() {
+    alert('Error setting media!');
+  }
+});

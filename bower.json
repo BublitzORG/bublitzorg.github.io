@@ -1,0 +1,21 @@
+{
+  "name": "bublitzorg.github.io",
+  "homepage": "https://github.com/BublitzORG/bublitzorg.github.io",
+  "authors": [
+    "Adam Bouqdib <adam@abemedia.co.uk>"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^1.12.4",
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.6.3",
+    "mediaelement": "^2.23.1"
+  }
+}
